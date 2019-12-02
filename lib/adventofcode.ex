@@ -24,3 +24,7 @@ end
 Adventofcode.read_input("d1p1")
 |> Day1.part1()
 |> IO.puts()
+
+Adventofcode.read_input("d1p1")
+|> Day1.part2()
+|> IO.puts()
