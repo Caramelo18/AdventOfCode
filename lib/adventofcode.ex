@@ -22,6 +22,5 @@ defmodule Adventofcode do
 end
 
 Adventofcode.read_input("d1p1")
-|> Enum.map(fn n -> Day1.part1(n) end)
-|> Enum.sum()
+|> Day1.part1()
 |> IO.puts()
