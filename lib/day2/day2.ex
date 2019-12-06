@@ -15,9 +15,38 @@ defmodule Day2 do
         list
     end
 
+    def part1_aux(arg, _arg, _index) do
+        arg
+    end
+
     def part1(arg) do
         part1_aux(arg, arg, 0)
-        |> IO.inspect()
+    end
+
+    def part2_aux([19690720, noun, verb | _tail]) do
+        [19690720, noun, verb]
+    end
+
+    def part2_aux([_result, 99, 99 | _tail]) do
+        IO.puts("duck")
+    end
+
+    def part2_aux([_result, noun, 99 | tail]) do
+        [result1 | _tail_res] = part1([1, noun + 1, 0 | tail])
+        part2_aux([result1, noun + 1, 0 | tail])
+    end
+
+    def part2_aux([_result, noun, verb | tail]) do
+        [result1 | _tail_res] = part1([1, noun, verb + 1 | tail])
+        part2_aux([result1, noun, verb + 1 | tail])
+    end
+
+    def part2([_result, _noun, _verb | tail]) do
+        [result, noun, verb] = part2_aux([1, 0, 0 | tail])
+        IO.puts(result)
+        IO.puts(noun)
+        IO.puts(verb)
+        100* noun + verb
     end
 end
   

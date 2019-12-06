@@ -31,7 +31,10 @@ end
 # |> Day1.part2()
 # |> IO.puts()
 
-Adventofcode.read_input("d2", ",")
-|> Day2.part1()
+# Adventofcode.read_input("d2", ",")
+# |> Day2.part1()
+# |> IO.inspect()
 
-Day2.part1([1,1,1,4,99,5,6,0,99])
+Adventofcode.read_input("d2", ",")
+|> Day2.part2()
+|> IO.inspect()
